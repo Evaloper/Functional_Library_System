@@ -8,14 +8,12 @@ import com.library.models.User;
 import com.library.services.Impl.LibraryServicePriorityImpl;
 import com.library.services.Impl.LibraryServiceFifoImpl;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<User> users = new ArrayList<>(Arrays.asList(
+        Queue<User> users = new ArrayDeque<>(Arrays.asList(
                 new User("Austin Eva", Gender.FEMALE, Role.IS_JUNIOR, 101),
                 new User("Jame Tochi", Gender.MALE, Role.IS_JUNIOR, 102),
                 new User("Eric Eme", Gender.MALE, Role.IS_SENIOR,  103),
@@ -25,7 +23,7 @@ public class Main {
 
         Book book1 = new Book("Java 101", "Evaloper", true, 20221, 3);
         Book book2 = new Book("Java OOP", "Isi oma", true, 20222, 2);
-        Book book3 = new Book("Java Generics", "Dera Classics", true, 20222, 1);
+        Book book3 = new Book("Java Generics", "Dera Classics", true, 20222, 5);
         Book book4 = new Book("Java Collections", "Chinny Odinma", true, 20222, 2);
 
         List<Book> bookList = new ArrayList<>(Arrays.asList(book1, book2, book3, book4));
@@ -36,28 +34,26 @@ public class Main {
         System.out.println("Print Priority");
         System.out.println("==============================");
         LibraryServicePriorityImpl libraryService = new LibraryServicePriorityImpl();
-        libraryService.addUsersToQueue(users.get(0));
-        libraryService.addUsersToQueue(users.get(1));
-        libraryService.addUsersToQueue(users.get(2));
-        libraryService.addUsersToQueue(users.get(3));
-        libraryService.addUsersToQueue(users.get(4));
+
+        //Add users to Queue
+        users.forEach(libraryService::addUsersToQueue);
+
 
         // Implementation
-        libraryService.borrowBook(users, book2);
+        libraryService.borrowBook(users, bookList);
 
         System.out.println(" ");
         System.out.println("==============================");
         System.out.println("Print Fifo");
         System.out.println("==============================");
         LibraryServiceFifoImpl serviceImpl2 = new LibraryServiceFifoImpl();
-        serviceImpl2.addUsersToQueue(users.get(0));
-        serviceImpl2.addUsersToQueue(users.get(1));
-        serviceImpl2.addUsersToQueue(users.get(2));
-        serviceImpl2.addUsersToQueue(users.get(3));
-        serviceImpl2.addUsersToQueue(users.get(4));
 
-        //Implementation
-        System.out.println(serviceImpl2.borrowBook(users, book1));
+        // Add users to queue
+        users.forEach(serviceImpl2::addUsersToQueue);
+
+// Implementation
+        System.out.println(serviceImpl2.borrowBook(users, bookList));  // Don't pass the users list
+
 
 
 
