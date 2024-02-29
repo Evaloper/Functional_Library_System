@@ -1,9 +1,7 @@
 package com.library.enums;
 
 public enum Role {
-    LIBRARIAN,
-    TEACHER,
-    STUDENT
+    TEACHER, STUDENT, IS_SENIOR, IS_JUNIOR
 
 
 }

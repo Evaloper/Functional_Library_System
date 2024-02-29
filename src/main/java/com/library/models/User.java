@@ -2,8 +2,11 @@ package com.library.models;
 
 import com.library.enums.Gender;
 import com.library.enums.Role;
+import lombok.Data;
 
-public abstract class User {
+@Data
+
+public class User {
     private String fullName;
     private Gender gender;
     private Role role;
@@ -16,37 +19,9 @@ public abstract class User {
         this.queueOrder = queueOrder;
     }
 
-    public String getFullName() {
-        return fullName;
-    }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
 
-    public Gender getGender() {
-        return gender;
-    }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public int getQueueOrder() {
-        return queueOrder;
-    }
-
-    public void setQueueOrder(int queueOrder) {
-        this.queueOrder = queueOrder;
-    }
 
     @Override
     public String toString() {

@@ -1,5 +1,8 @@
 package com.library.models;
 
+import lombok.Data;
+
+@Data
 public class Book {
     private String bookTitle;
     private String bookAuthor;
@@ -15,45 +18,45 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public String getBookTitle() {
-        return bookTitle;
-    }
+//    public String getBookTitle() {
+//        return bookTitle;
+//    }
+//
+//    public void setBookTitle(String bookTitle) {
+//        this.bookTitle = bookTitle;
+//    }
+//
+//    public String getBookAuthor() {
+//        return bookAuthor;
+//    }
+//
+//    public void setBookAuthor(String bookAuthor) {
+//        this.bookAuthor = bookAuthor;
+//    }
+//
+//    public boolean isAvailable() {
+//        return available;
+//    }
+//
+//    public void setAvailable(boolean available) {
+//        this.available = available;
+//    }
+//
+//    public int getSerialNumber() {
+//        return serialNumber;
+//    }
 
-    public void setBookTitle(String bookTitle) {
-        this.bookTitle = bookTitle;
-    }
-
-    public String getBookAuthor() {
-        return bookAuthor;
-    }
-
-    public void setBookAuthor(String bookAuthor) {
-        this.bookAuthor = bookAuthor;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
-
-    public int getSerialNumber() {
-        return serialNumber;
-    }
-
-    public void setSerialNumber(int serialNumber) {
-        this.serialNumber = serialNumber;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+//    public void setSerialNumber(int serialNumber) {
+//        this.serialNumber = serialNumber;
+//    }
+//
+//    public int getQuantity() {
+//        return quantity;
+//    }
+//
+//    public void setQuantity(int quantity) {
+//        this.quantity = quantity;
+//    }
 
     @Override
     public String toString() {
